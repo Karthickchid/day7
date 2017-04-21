@@ -1,0 +1,132 @@
+package Day7Ass;
+
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Student1 {
+HashMap<String, String> empNames =new HashMap<String, String>();
+public void setNames( ) {
+	Scanner s=new Scanner(System.in);
+
+	System.out.println("enter no of elements");
+	int n=s.nextInt();
+	for (int i = 0; i < n; i++) {
+		System.out.println("Enter the rollno,name");
+	String o=s.next();
+	//System.out.println(o);
+	empNames.put(s.next(),s.next());
+}
+}
+public void printNames( ) {
+	Enumeration e=(Enumeration) empNames.entrySet();
+	while(e.hasMoreElements())
+		System.out.println(e.nextElement());
+	
+}
+public void getName( String key ) {
+	String w=empNames.get(key);
+	System.out.println(w);
+}
+public void printSize( ) {
+	System.out.println(empNames.size());
+}
+public void remove( String key ){
+	System.out.println(empNames.remove(key));
+}
+}
+
+
+
+
+
+
+
+package Day7Ass;
+
+public class TestHashMap {
+
+	public static void main(String[] args) {
+		Student1 st=new Student1();
+		//st.setNames();
+//st.printNames();
+st.printSize();
+	}
+
+}
+
+
+
+
+
+
+
+package Day7Ass;
+
+public class ArrayListDemo {
+
+	public static void main(String[] args) {
+		Student c=new Student();
+		c.setNames();
+c.searchName("Aditya");
+c.searchName(1);
+c.printNames();
+c.removeName("Anuj");
+System.out.println("----------");
+c.printNames();
+	}
+
+}
+
+
+
+package Day7Ass;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Student {
+
+
+
+	ArrayList<String> name= new ArrayList<String> ();
+	public void setNames(){	
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the no of elements");
+		int n=s.nextInt();
+		System.out.println("Enter name");
+		for(int i= 0;i < n; i++ ){
+			String o=s.next();
+			name.add(o);
+		}
+
+
+
+	}
+
+	public void searchName( String n){
+
+		if(name.contains(n))
+		{
+			System.out.println("Found");
+		}
+		else{
+			System.out.println("not found");
+		}
+	}
+	public void searchName(int index){
+		String s=name.get(index);
+		System.out.println(s);
+	}
+	public void printNames( ){
+		Iterator i=name.iterator();
+		while(i.hasNext()){
+			System.out.println(i.next());
+		}
+	}
+	public void removeName( String sn ) {
+		System.out.println(name.remove(sn));
+	}
+}
